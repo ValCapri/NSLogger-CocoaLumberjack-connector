@@ -23,14 +23,14 @@
   switch (logMessage->logFlag) {
     case LOG_FLAG_ERROR : logLevel = @"Err!"; break;
     case LOG_FLAG_WARN  : logLevel = @"Warn"; break;
-    case LOG_FLAG_INFO  : logLevel = @"    "; break;
+    case LOG_FLAG_INFO  : logLevel = @"Info"; break;
     default             : logLevel = @"Verb"; break;
   }
 
   NSString *dateAndTime = [dateFormatter stringFromDate:(logMessage->timestamp)];
   NSString *logMsg = logMessage->logMsg;
 
-  return [NSString stringWithFormat:@"%@(%@) %@ %@ <%d>", dateAndTime, [logMessage threadID], logLevel, logMsg, logMessage->lineNumber];
+  return [NSString stringWithFormat:@"%@(%@) %@ %@ <%@:%@:%d>", dateAndTime, [logMessage threadID], logLevel, logMsg, [logMessage fileName],[logMessage methodName], logMessage->lineNumber];
 }
 
 @end

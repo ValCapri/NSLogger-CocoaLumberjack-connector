@@ -3,7 +3,7 @@
 	url = https://github.com/fpillet/NSLogger.git
 [submodule "CocoaLumberjack"]
 	path = CocoaLumberjack
-	url = https://github.com/diederich/CocoaLumberjack.git
+url=https://github.com/CocoaLumberjack/CocoaLumberjack.git
 [submodule "Configurations"]
 	path = Configurations
 	url = https://github.com/diederich/xcconfigs
